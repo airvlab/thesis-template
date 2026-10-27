@@ -1,0 +1,54 @@
+\section{Custom Floats}\label{ch6sec:custom-floats}
+
+The template already provides custom float-like environments for side-by-side figures and shaded text blocks. If you need additional float types---for example, ``algorithm'' or ``protocol'' floats---you can define them with the \texttt{newfloat} package.
+
+\begin{figure}[h]
+\centering
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Algorithm};
+\end{tikzpicture}}
+\hspace{1em}
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Protocol};
+\end{tikzpicture}}
+\mycaption{Custom floats}{Placeholder figures illustrating custom float types.}
+\label{ch6fig:setup}
+\end{figure}
+
+\subsection{Defining a New Float}
+
+A new float type is declared with \verb|\DeclareFloatingEnvironment|. For example, to create an \texttt{algorithm} float, write:
+\begin{verbatim}
+\DeclareFloatingEnvironment[name=Algorithm]{algorithm}
+\end{verbatim}
+You can then create an \texttt{algorithm} environment, add a \verb|\caption|, and include it in a list of algorithms. Remember to add the new list to the table of contents if required.
+
+\begin{table}[h]
+\caption{Custom float types in the template}\label{ch6tab:demo-nav}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Float type} & \thead{Defined via} \\
+\midrule
+Figure & Standard \texttt{figure} environment \\
+Table & Standard \texttt{table} environment \\
+Listing & \texttt{longlisting} environment \\
+Side-by-side figures & \texttt{sidebysidefigures} environment \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Integration with the Template}
+
+Custom floats should follow the same styling conventions as figures and tables. Use the \texttt{mdframed} package to add a coloured frame if desired, and use \verb|\mycaption| for captions. Table~\ref{ch6tab:demo-nav} summarises the float types available in the template.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Custom Float Demo}\\ Define, caption, list.};
+\end{tikzpicture}
+\mycaption{Qualitative comparison}{A placeholder qualitative comparison figure.}\label{ch6fig:qualitative}
+\end{figure}

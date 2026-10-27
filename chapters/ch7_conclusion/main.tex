@@ -1,0 +1,34 @@
+\chapter{Conclusion}
+\chaptermark{Conclusion}
+% Reset the glossary count so acronyms are written in full on first use in the abstract
+\glsresetall
+
+This document introduced the thesis template from the author's perspective. Each chapter focused on a different aspect of using the template: why it exists, what features it provides, how to add content, how to customise the design, how to build and publish the result, and how to handle advanced layout needs. By replacing the template-oriented text with your own research material while preserving the chapter structure, you can produce a consistent and professional thesis.
+
+\section{Summary}
+
+The main topics covered in this document are summarised as follows:
+
+\begin{enumerate}
+\item \textbf{Introduction:} The template exists to save time and provide a consistent starting point for doctoral dissertations (Chapter~\ref{ch1sec:outline}).
+\item \textbf{Features:} The template provides packages, custom commands, figures, tables, and code listings (Chapter~\ref{ch2sec:summary}).
+\item \textbf{Adding content:} Chapters, sections, figures, tables, acronyms, and citations follow a clear convention (Chapter~\ref{ch3sec:summary}).
+\item \textbf{Customisation:} Colours, fonts, margins, logos, and headers/footers are centralised in the class file and preamble (Chapter~\ref{ch4sec:custom-summary}).
+\item \textbf{Building and publishing:} Use the Makefile or \texttt{.latexmkrc} for repeatable builds, and pre-generate the \texttt{minted} cache for arXiv (Chapter~\ref{ch5sec:summary}).
+\item \textbf{Advanced topics:} Appendices, long tables, and custom floats extend the template when needed (Chapter~\ref{ch6sec:advanced-summary}).
+\end{enumerate}
+
+\section{Where to Get Help}
+
+If you encounter problems while using the template, consult the following resources:
+
+\begin{itemize}
+\item The \texttt{README.md} file in the repository root, which summarises features and submission instructions.
+\item The \texttt{class/thesis.cls} file, which contains the layout and colour definitions.
+\item The \texttt{preamble/} and \texttt{postamble/} directories, which control front matter and back matter.
+\item The example chapters in \texttt{chapters/}, which demonstrate the intended source structure.
+\end{itemize}
+
+\section{Final Remarks}
+
+A thesis template cannot write your research for you, but it can remove many of the mechanical obstacles that slow down writing. By keeping design decisions centralised and content separate, this template lets you focus on communicating your work clearly. Replace the placeholder content chapter by chapter, run the build regularly, and consult the preceding chapters whenever you need a reminder of how a feature works.

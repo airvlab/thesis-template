@@ -1,0 +1,4 @@
+# Auto-generated preview images are binary assets that can be tracked with
+# Git LFS to keep the repository small. If Git LFS is not enabled in this
+# repository, this line has no effect and the files are tracked normally.
+docs/images/preview/*.png filter=lfs diff=lfs merge=lfs -text

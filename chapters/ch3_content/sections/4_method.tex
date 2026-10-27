@@ -1,0 +1,26 @@
+\section{Tables}\label{ch3sec:tables}
+
+This section is a placeholder for your methodology. Replace it with your approach, equations, and algorithms. If you need tables, follow the pattern below and store large tables in separate files under a \texttt{tables/} folder.
+
+\subsection{Simple Tables}
+
+Table~\ref{ch3tab:demo-results} is a minimal example. Replace the placeholder rows with your own data.
+
+\begin{table}[h]
+\caption{Table formatting conventions}\label{ch3tab:demo-results}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Element} & \thead{Guideline} \\
+\midrule
+Rules & Use \texttt{booktabs} (\verb|\toprule|, \verb|\midrule|, \verb|\bottomrule|) \\
+Caption & Place above the table with \verb|\mycaption| \\
+Alignment & Use \texttt{siunitx} for numeric columns \\
+Files & Store large tables in \texttt{tables/} and include with \verb|\input| \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reusable Table Files}
+
+When a table is reused or very long, place it in a separate \texttt{.tex} file containing only the table environment. Include it from multiple sections or chapters using \verb|\input{tables/filename}|.

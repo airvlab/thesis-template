@@ -1,0 +1,22 @@
+\section{Logos and Headers/Footers}\label{ch4sec:logos-headers}
+
+The title page displays institutional and research-group logos. These are loaded from the \texttt{logo/} directory. To use your own logos, replace the image files and update the paths in \texttt{preamble/titlepage.tex}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Logo Area}\\ Replace with your institution logo.};
+\end{tikzpicture}
+\mycaption{Logo placement}{A placeholder figure showing the title-page logo area.}\label{ch4fig:results}
+\end{figure}
+
+\subsection{Headers and Footers}
+
+Running headers are controlled by the \texttt{fancyhdr} package in the class file. The default style prints the chapter title on the left and the page number on the right of odd pages, and vice versa on even pages. You can change the header content by redefining \verb|\chaptermark| or by editing the \texttt{fancyhdr} setup directly.
+
+\input{tables/main_table}
+
+\subsection{Discussion}
+
+Table~\ref{ch4tab:demo-main} summarises the customisation options covered in this chapter. Most changes require only a single edit in the class file or preamble, keeping chapter content free of design details.

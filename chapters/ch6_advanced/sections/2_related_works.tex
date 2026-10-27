@@ -1,0 +1,20 @@
+\section{Appendices}\label{ch6sec:appendices}
+
+Appendices are placed in the postamble and are included from \texttt{main.tex} after the chapters. They are typically used for supplementary material such as detailed proofs, additional figures, or source code listings. The template provides a \texttt{minted} setup for code listings and adds them to a dedicated list of listings.
+
+\paragraph{Adding an appendix.} Create a new file under \texttt{postamble/}, for example \verb|appendix_a.tex|. Include it from \texttt{main.tex} with \verb|\input{postamble/appendix_a.tex}|. Use the \verb|\appendix| command before the first appendix file so that chapters are numbered with letters.
+
+\begin{figure}[h]
+\centering
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Appendix A};
+\end{tikzpicture}}
+\hfill
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Appendix B};
+\end{tikzpicture}}
+\mycaption{Appendix layout}{Placeholder subfigures showing appendix chapters.}
+\label{ch6fig:failure}
+\end{figure}

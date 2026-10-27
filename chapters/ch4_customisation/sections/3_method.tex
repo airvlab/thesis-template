@@ -1,0 +1,41 @@
+\section{Fonts and Margins}\label{ch4sec:fonts-margins}
+
+Typography and page geometry are controlled in the class file and the main preamble. This section explains the key variables and how to change them without breaking the layout.
+
+\subsection{Font Selection}
+
+The template uses a standard serif font for body text and a sans-serif font for headings. You can change the font packages in the class file; common choices include \texttt{mathpazo}, \texttt{libertine}, or the default \TeX{} fonts. Table~\ref{ch4tab:demo-arch} lists the main font roles in the template.
+
+\begin{table}[h]
+\caption{Font roles in the template}\label{ch4tab:demo-arch}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Role} & \thead{Default source} \\
+\midrule
+Body text & Serif font package in class file \\
+Headings & Sans-serif font package in class file \\
+Math & \texttt{amsmath}, \texttt{siunitx} setup \\
+Code & Monospaced font in listing setup \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Typographic settings}\label{ch4tab:demo-typography}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Setting} & \thead{Where to change} \\
+\midrule
+Font family & Class file font packages \\
+Font size & Class file base size options \\
+Line spacing & \texttt{setspace} or class file \\
+Page margins & \texttt{geometry} options in class file \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Page Margins}
+
+Margins are set using the \texttt{geometry} package. The class file defines reasonable defaults for A4 paper with a binding offset. If your institution requires different margins, update the \texttt{geometry} options in the class file rather than inserting manual page layout commands in individual chapters.

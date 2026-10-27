@@ -1,0 +1,42 @@
+\section{Common Errors}\label{ch5sec:errors}
+
+Even with a working template, errors can appear as you add your own content. This section lists the most common problems and how to resolve them.
+
+\begin{figure}[h]
+\centering
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Missing file};
+\end{tikzpicture}}
+\hfill
+\subfloat[][]{\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Undefined citation};
+\end{tikzpicture}}
+\caption{Common error categories.}
+\label{fig:build-errors}
+\end{figure}
+
+\subsection{Missing Input Files}
+
+If \LaTeX{} reports \texttt{! LaTeX Error: File `...' not found}, check that the path in your \verb|\input| or \verb|\includegraphics| command is correct and that the file exists. Remember that paths are relative to the main \texttt{main.tex} file, not to the chapter file that contains the \verb|\input|.
+
+\subsection{Undefined Citations}
+
+Warnings about undefined citations usually mean a key is missing from the bibliography file. Placeholder keys such as \texttt{placeholder2024demo} are defined in \texttt{class/bibliography/short.bib} as examples; replace them with real entries to remove the warnings.
+
+\begin{table}[h]
+\caption{Common error categories and fixes}\label{ch5tab:demo-errors}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Error category} & \thead{Fix} \\
+\midrule
+Missing input file & Verify the path relative to \texttt{main.tex} \\
+Undefined citation & Add the entry to the bibliography file \\
+Undefined reference & Run \LaTeX{} again or check the label \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{ch5tab:demo-errors} summarises the most common error categories and their fixes.

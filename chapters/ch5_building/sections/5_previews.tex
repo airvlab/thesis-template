@@ -1,0 +1,54 @@
+\section{Previews}\label{ch5sec:previews}
+
+While writing, it is helpful to preview the output without rebuilding the entire thesis every time. The template's \texttt{Makefile} includes a \texttt{preview} target that rebuilds \texttt{build/main.pdf} and extracts showcase PNGs into \texttt{docs/images/preview/}. These PNGs are embedded in \texttt{README.md} so the repository always shows the current template output. You can extend the target for your own workflow.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Preview}\\ Refresh the PDF after each build.};
+\end{tikzpicture}
+\mycaption{Qualitative preview}{A placeholder figure for the preview discussion.}\label{ch5fig:qualitative}
+\end{figure}
+
+\subsection{Fast Feedback}
+
+For rapid iteration, many editors can run \texttt{latexmk} in continuous mode with \texttt{-pvc}. This watches source files and rebuilds the PDF automatically. Because the template redirects output to \texttt{build/}, point your viewer at \texttt{build/main.pdf}.
+
+\subsection{Checking the Output}
+
+Before submission, inspect the list of figures, list of tables, and table of contents for missing or broken entries. Warnings about undefined references or citations should be resolved unless they are intentional placeholders.
+
+\begin{sidebysidefigures}
+\begin{leftfigure}
+\small
+\centering
+\begin{tabular}{l c}
+\toprule
+\thead{Build statistic} & \thead{Value} \\
+\midrule
+Compilation time & \textless{} 30\,s \\
+Warnings (typical) & 5--10 \\
+PDF size & \textasciitilde{} 1\,MB \\
+\bottomrule
+\end{tabular}
+\mycaptionof{table}{Build statistics}{Placeholder build statistics for fast feedback.}\label{ch5-tab:demo-shape}
+\end{leftfigure}%
+\begin{rightfigure}
+\small
+\centering
+\begin{tabular}{l c}
+\toprule
+\thead{Check} & \thead{Status} \\
+\midrule
+List of figures & Review \\
+List of tables & Review \\
+Table of contents & Review \\
+Undefined references & Resolve \\
+\bottomrule
+\end{tabular}
+\mycaptionof{table}{Submission checklist}{Placeholder submission checklist for output review.}\label{ch5-tab:demo-segmentation}
+\end{rightfigure}
+\end{sidebysidefigures}
+
+Tables~\ref{ch5-tab:demo-shape} and \ref{ch5-tab:demo-segmentation} report placeholder build statistics.

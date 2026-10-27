@@ -1,0 +1,128 @@
+\chapter{Template Features in Depth}
+\chaptermark{Template Features}
+\glsresetall
+
+This chapter reviews the features that the template provides out of the box. It is not a literature review; it is a tour of the packages, commands, and environments that make the template useful. Understanding these features will help you write your own content more quickly and consistently.
+
+The chapter is organised as follows. Section~\ref{ch2sec:packages} lists the key packages that are loaded. Section~\ref{ch2sec:commands} describes the custom commands defined for captions, Latin abbreviations, and section breaks. Section~\ref{ch2sec:figures} demonstrates figure support, including framed figures and side-by-side layouts. Section~\ref{ch2sec:tables} demonstrates table styling. Section~\ref{ch2sec:listings} shows how code listings are handled. Finally, Section~\ref{ch2sec:summary} recaps the chapter.
+
+
+\section{Loaded Packages}\label{ch2sec:packages}
+
+The template loads a curated set of packages for typography, mathematics, graphics, and tables. Important examples include \texttt{amsmath} for equations, \texttt{graphicx} for figures, \texttt{booktabs} and \texttt{siunitx} for tables, \texttt{glossaries} for acronyms, and \texttt{mdframed} for coloured boxes.
+
+Table~\ref{tab:background-applications} lists a few representative packages and their purposes. In your own thesis you can extend this set in the preamble if a package is not already loaded.
+
+\begin{table}[ht]
+\centering
+\caption{Representative packages loaded by the template.}
+\label{tab:background-applications}
+\begin{tabular}{l l l}
+\toprule
+\thead{Package} & \thead{Purpose} & \thead{Typical Use} \\
+\midrule
+\texttt{amsmath} & Mathematics & Numbered equations \\
+\texttt{booktabs} & Tables & Professional rules \\
+\texttt{siunitx} & Units & Aligned numeric columns \\
+\texttt{glossaries} & Acronyms & First-use expansion \\
+\texttt{mdframed} & Coloured boxes & Figures and shaded blocks \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Custom Commands}\label{ch2sec:commands}
+
+The template defines a small number of custom commands to keep the source readable. The most frequently used are:
+
+\begin{itemize}
+\item \verb|\mycaption{title}{description}|: produces a caption with a bold title followed by a longer description. The title is also used for the list of figures/tables.
+\item \verb|\blankpage|: inserts an empty page with no page number.
+\item \verb|\aboveparule|: draws a horizontal rule above a paragraph.
+\item \verb|\sectionbreak|: starts each section on a new page.
+\item \verb|\eg|, \verb|\ie|, \verb|\cf|, \verb|\etc|, \verb|\etal|: italicised Latin abbreviations.
+\end{itemize}
+
+These commands can be used anywhere in the body of the thesis. For example, \eg{} and \ie{} are useful when writing compactly, while \verb|\mycaption{}| ensures that figure and table captions follow the house style.
+
+
+\section{Figures}\label{ch2sec:figures}
+
+Figures in the template are framed with a coloured background using \texttt{mdframed}. A minimal figure is shown in Figure~\ref{fig:background-demo}. The source uses a TikZ placeholder, but you can replace the \texttt{tikzpicture} with an \verb|\includegraphics| command pointing to your own image file.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Demo Figure}\\ Replace with your own figure.};
+\end{tikzpicture}
+\mycaption{Background demo figure}{A placeholder figure used to demonstrate the \texttt{mycaption} command.}\label{fig:background-demo}
+\end{figure}
+
+The template also supports side-by-side figures through the custom \texttt{sidebysidefigures} environment. Figure~\ref{fig:demo-left} and Figure~\ref{fig:demo-right} are two subfigures placed next to each other.
+
+\begin{sidebysidefigures}[.53]
+\begin{leftfigure}
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Left demo};
+\end{tikzpicture}
+\captionof{figure}{Left demo subfigure.}
+\label{fig:demo-left}
+\end{leftfigure}%
+\begin{rightfigure}
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (3,1.5);
+\node[align=center, font=\small] at (1.5,0.75) {Right demo};
+\end{tikzpicture}
+\captionof{figure}{Right demo subfigure.}
+\label{fig:demo-right}
+\end{rightfigure}
+\end{sidebysidefigures}
+
+
+\section{Tables}\label{ch2sec:tables}
+
+Tables use \texttt{booktabs} for clean horizontal rules and can be combined with \texttt{siunitx} for aligned numeric columns. Table~\ref{tab:demo-commands} shows a small comparison of template features.
+
+\begin{table}[ht]
+\centering
+\caption{Comparison of template features.}
+\label{tab:demo-commands}
+\begin{tabular}{l c c}
+\toprule
+\thead{Feature} & \thead{Provided} & \thead{Customisable} \\
+\midrule
+Framed figures & \checkmark & \checkmark \\
+Framed tables & \checkmark & \checkmark \\
+Code listings & \checkmark & \checkmark \\
+Side-by-side figures & \checkmark & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For more complex tables you can use the \texttt{threeparttable} environment to add notes beneath a table, or the \texttt{longtable} environment for tables that span multiple pages. Both are demonstrated in Chapter~\ref{ch6sec:advanced-topics}.
+
+
+\section{Code Listings}\label{ch2sec:listings}
+
+The template uses the \texttt{minted} package to display source code. Code blocks are numbered and can be added to a dedicated list of listings. Listing~\ref{lst:demo} shows a short Python example; in your own thesis you would usually place such listings in the appendix rather than in a chapter body.
+
+\begin{listing}[ht]
+\begin{minted}{python}
+# Demo code listing showing a simple function.
+def hello_template(name):
+    """Greet the template user."""
+    return f"Hello, {name}! Welcome to the thesis template."
+\end{minted}
+\caption{Demo Python function using the \texttt{minted} package.}\label{lst:demo}
+\end{listing}
+
+Because the \texttt{minted} package calls \texttt{pygmentize} through \texttt{-shell-escape}, local builds work automatically. For arXiv you must pre-generate the \texttt{minted} cache; this process is described in Chapter~\ref{ch5sec:arxiv}.
+
+
+\section{Summary}\label{ch2sec:summary}
+
+This chapter introduced the packages, custom commands, figures, tables, and code listings that the template provides. The next chapter explains how to populate the template with your own chapters, sections, and content.

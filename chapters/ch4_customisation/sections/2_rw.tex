@@ -1,0 +1,19 @@
+\section{Colours}\label{ch4sec:colours}
+
+The template defines a small set of theme colours in the class file. The most important is \texttt{primary}, which is used for figure frames, chapter headings, and shaded blocks. You can change \texttt{primary} by editing the colour definition in the class file, but doing so affects the whole document consistently.
+
+\paragraph{Theme colours.} Figure~\ref{ch4fig:colours} shows a small colour card. In your own thesis you might use additional colours for different data series, but the template recommends keeping the main palette small.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\fill[primary!30] (0,0) rectangle (1.5,1);
+\fill[primary!50] (1.7,0) rectangle (3.2,1);
+\fill[primary!70] (3.4,0) rectangle (4.9,1);
+\fill[primary] (5.1,0) rectangle (6.6,1);
+\node[align=center, font=\small] at (3.3,-0.4) {Primary colour family.};
+\end{tikzpicture}
+\mycaption{Colour palette demo}{A placeholder figure showing the primary colour family.}\label{ch4fig:colours}
+\end{figure}
+
+\paragraph{Using colours safely.} Always use named colours rather than hard-coded RGB values in your chapter source. This makes it easier to update the design later and ensures that all figures and boxes remain consistent.

@@ -1,0 +1,27 @@
+\section{Figures and Labels}\label{ch3sec:figures}
+
+This section demonstrates how to add figures. Replace the placeholder TikZ drawings below with your own graphics or diagrams. Use consistent label prefixes so you can find references later:
+
+\begin{itemize}
+\item Figures: \verb|ch3fig:name|
+\item Tables: \verb|ch3tab:name|
+\item Equations: \verb|eq:name|
+\item Sections: \verb|ch3sec:name|
+\end{itemize}
+
+\subsection{Single Figures}
+
+A single figure is placed in a \texttt{figure} environment. You can use TikZ for programmatic drawings or \verb|\includegraphics| for external images. Figure~\ref{ch3fig:single} shows a minimal framed figure.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Single Figure}\\ Use \texttt{includegraphics} here.};
+\end{tikzpicture}
+\mycaption{Single figure example}{A placeholder figure demonstrating a standalone framed figure. Replace the \texttt{tikzpicture} with your own image.}\label{ch3fig:single}
+\end{figure}
+
+\subsection{Subfigures and Referencing}
+
+When you have multiple panels, use the \texttt{subcaption} package (already loaded by the class) and label each subfigure. Reference individual panels as \verb|\ref{ch3fig:panel-a}| and the whole figure as \verb|\ref{ch3fig:panels}|.

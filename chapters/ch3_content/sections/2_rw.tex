@@ -1,0 +1,24 @@
+\section{Related Work}\label{ch3sec:structure}
+
+This section usually surveys prior research. To write your own literature review, open \texttt{chapters/ch3\_content/sections/2\_rw.tex} and replace the placeholder paragraphs with real citations. Use \verb|\cite{key}| for inline citations, \verb|\citeauthor{key}| for author names, and \verb|\citeyear{key}| for years. See Section~\ref{ch3sec:acronyms-citations} for examples.
+
+Each chapter lives in its own directory under \texttt{chapters/}. The entry point is \texttt{main.tex}, which starts with a \verb|\chapter| command, a \verb|\chaptermark| for the running header, and \verb|\glsresetall| to ensure acronyms are expanded again at the start of the chapter.
+
+\begin{table}[h]
+\caption{Chapter structure conventions}\label{ch3tab:demo-comparison}
+\centering
+\begin{tabular}{l l}
+\toprule
+\thead{Convention} & \thead{Recommendation} \\
+\midrule
+Chapter folder & \texttt{chapters/your\_chapter/} \\
+Entry file & \texttt{main.tex} \\
+Section files & \texttt{sections/section\_name.tex} \\
+Table files & \texttt{tables/table\_name.tex} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Creating a new chapter.} Copy an existing chapter folder, rename it, and add an import command in \texttt{main.tex}. The command should look like \texttt{\textbackslash import\{chapters/your\_chapter\}\{main.tex\}}. Table~\ref{ch3tab:demo-comparison} summarises the conventions.
+
+\paragraph{Adding sections.} Use the standard \verb|\section{...}| command. Subsections and subsubsections work as usual. If you want every section to start on a new page, keep \verb|\sectionbreak| active in the class file.

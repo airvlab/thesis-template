@@ -1,0 +1,21 @@
+\section{Compilation}\label{ch5sec:compilation}
+
+The template can be compiled with \texttt{pdflatex}, \texttt{lualatex}, or \texttt{xelatex}. The default is \texttt{pdflatex} because it is supported by arXiv and works in restricted environments. Compilation is orchestrated by \texttt{latexmk} through either the Makefile or the \texttt{.latexmkrc} file.
+
+\paragraph{Using the Makefile.} Running \texttt{make} builds \texttt{build/main.pdf}. Running \texttt{make clean} removes auxiliary files, and \texttt{make cleanall} removes the entire build directory.
+
+\begin{table}[h]
+\caption{Supported compilation engines}\label{ch5tab:demo-datasets}
+\centering
+\begin{tabular}{l l l}
+\toprule
+\thead{Engine} & \thead{Best for} & \thead{Notes} \\
+\midrule
+\texttt{pdflatex} & arXiv compatibility & Default engine \\
+\texttt{lualatex} & Modern OpenType fonts & Flexible font handling \\
+\texttt{xelatex} & System fonts & Similar to \texttt{lualatex} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Using latexmk directly.} You can also run \texttt{latexmk main.tex}. The \texttt{.latexmkrc} file configures \texttt{pdflatex}, enables shell escape for \texttt{minted}, and redirects output to \texttt{build/}. Table~\ref{ch5tab:demo-datasets} compares the available engines.

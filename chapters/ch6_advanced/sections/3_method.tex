@@ -1,0 +1,20 @@
+\section{Long Tables}\label{ch6sec:longtables}
+
+Standard \texttt{table} environments cannot break across pages. For tables that span multiple pages, use the \texttt{longtable} package. Long tables repeat the header row at the top of each page and can include captions that span the full width.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Long Table}\\ Spans multiple pages.};
+\end{tikzpicture}
+\mycaption{Long table demo}{A placeholder figure indicating a multi-page table.}\label{ch6fig:bspline}
+\end{figure}
+
+\subsection{Using longtable}
+
+The \texttt{longtable} environment replaces the \texttt{table} and \texttt{tabular} pair. Place the column definitions, header rows, and body rows inside a single \texttt{longtable} environment. \LaTeX{} will automatically split it across pages and repeat the header as needed.
+
+\subsection{Notes in Long Tables}
+
+You can combine \texttt{longtable} with \texttt{threeparttable} to add notes at the bottom of the table. Be careful with page breaks: notes should usually appear only on the final page of the table, or be repeated according to your style guide.

@@ -1,0 +1,41 @@
+\section{Submitting to arXiv}\label{ch5sec:arxiv}
+
+arXiv processes submissions with \texttt{-shell-escape} disabled. This means the \texttt{minted} package cannot call \texttt{pygmentize} during arXiv's build. arXiv also expects a flat source layout, while this template keeps chapters and appendices in subdirectories. The template therefore provides an automated packaging step that solves both problems.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{arXiv Submission}\\ Run \texttt{make arxiv}.};
+\end{tikzpicture}
+\mycaption{arXiv preparation}{A placeholder figure reminding authors to use the automated arXiv packaging target.}\label{ch5fig:architecture}
+\end{figure}
+
+\subsection{Automated Packaging}
+
+Run the provided Makefile target from the repository root:
+
+\begin{verbatim}
+make arxiv
+\end{verbatim}
+
+This produces \texttt{arxiv-submission.tar.gz}, a self-contained archive ready to upload. The packaging script:
+
+\begin{itemize}
+\item flattens all \texttt{\textbackslash import}, \texttt{\textbackslash subimport} and \texttt{\textbackslash input} calls into a single \texttt{main.tex};
+\item moves \texttt{thesis.cls} and the \texttt{.bib} files to the submission root;
+\item copies \texttt{logo/} assets;
+\item pre-generates a frozen \texttt{minted-cache/} so syntax highlighting works without \texttt{-shell-escape}.
+\end{itemize}
+
+Upload \texttt{arxiv-submission.tar.gz} to arXiv directly. No manual path fixing or cache generation is required.
+
+\subsection{Cleaning Up}
+
+The generated submission files can be removed with:
+
+\begin{verbatim}
+make cleanarxiv
+\end{verbatim}
+
+This deletes \texttt{arxiv-submission/} and \texttt{arxiv-submission.tar.gz}. Your local build and source files are not affected.

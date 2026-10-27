@@ -1,0 +1,84 @@
+\chapter{Introduction}
+\chaptermark{Introduction}
+% Reset the glossary count so acronyms are written in full on first use in the abstract
+\glsresetall
+
+This thesis template is a ready-to-use \LaTeX{} project for doctoral dissertations. Rather than describing a research topic, the following chapters explain how the template is organised, what features it provides, and how you can adapt it to your own thesis. The placeholder text in every chapter is intentionally written about the template itself so that the structure remains visible while the research-specific content is removed.
+
+The remainder of this chapter is organised as follows. Section~\ref{ch1sec:motivation} explains why the template exists and what problems it solves. Section~\ref{ch1sec:objectives} states the design objectives and the audience it serves. Section~\ref{ch1sec:scope} describes the scope of the template and what is not included. Section~\ref{ch1sec:publications} lists illustrative placeholder publications. Finally, Section~\ref{ch1sec:outline} gives an overview of the chapters that follow.
+
+
+\section{Motivation}\label{ch1sec:motivation}
+
+Writing a PhD thesis in \LaTeX{} involves many repetitive tasks: setting consistent margins, numbering chapters, formatting figures and tables, managing acronyms, and producing a submission-ready PDF. Starting from a blank document each time leads to inconsistent styling, lost time, and frustration near submission deadlines.
+
+This template was created to give authors a clean, well-structured starting point. It bundles a thesis class, a carefully written preamble, and example chapters that demonstrate the most common formatting needs. Figure~\ref{fig:demo-overview} shows a placeholder visual summary of the template's role.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Thesis Template}\\ Structure, style, and examples.};
+\end{tikzpicture}
+\caption[Template overview]{A placeholder overview figure showing the template as a bridge between raw content and a formatted thesis.}\label{fig:demo-overview}
+\end{figure}
+
+A simple equation is included below to demonstrate the numbered \texttt{equation} environment. For a polynomial $ax^2 + bx + c = 0$ with $a \neq 0$, the roots are
+\begin{equation}
+\label{eq:quadratic}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\end{equation}
+Equation~\eqref{eq:quadratic} is included only to demonstrate numbered equation environments.
+
+
+\section{Design Objectives}\label{ch1sec:objectives}
+
+The template was designed around a small set of clear objectives:
+
+\begin{itemize}
+\item Provide a consistent visual style for chapters, figures, tables, and code listings.
+\item Separate content from configuration so that authors can focus on writing.
+\item Support common academic requirements such as acronyms, bibliographies, and arXiv submission.
+\item Include working examples of every major feature so that authors can copy and adapt them.
+\end{itemize}
+
+To meet these objectives, the template relies on standard packages and a small set of custom commands. The research questions normally answered by a thesis are outside the scope of this document; instead, the chapters explain how to express those answers using the template.
+
+
+\section{Scope and Audience}\label{ch1sec:scope}
+
+The template is intended for PhD students in technical fields who want a polished thesis without building a \LaTeX{} class from scratch. It assumes basic familiarity with \LaTeX{} but does not require experience with class file design.
+
+The following items are included in the template:
+
+\begin{enumerate}
+\item A thesis class file in \texttt{class/} that controls layout and typography.
+\item A preamble in \texttt{preamble/} for front-matter pages such as the title page, abstract, and acknowledgements.
+\item Example chapters in \texttt{chapters/} that demonstrate the intended chapter structure.
+\item A postamble in \texttt{postamble/} for appendices, bibliographies, and indices.
+\end{enumerate}
+
+The template intentionally does not prescribe a research methodology, a citation management workflow, or a specific writing style. Authors should replace the placeholder content with their own research while keeping the structural conventions.
+
+
+\section{List of Publications}\label{ch1sec:publications}
+
+The following placeholder publications are included solely to demonstrate the \texttt{localbib} environment:
+
+\begin{localbib}
+\nocite{placeholder2024demo, placeholder2024template}
+\end{localbib}
+
+
+\section{Outline}\label{ch1sec:outline}
+
+The remainder of this document explains the template feature by feature:
+
+\begin{itemize}
+\item \emph{Chapter~2} reviews the packages and custom commands provided by the template.
+\item \emph{Chapter~3} explains how to add your own chapters, sections, figures, tables, acronyms, and citations.
+\item \emph{Chapter~4} describes how to customise colours, fonts, margins, logos, and headers/footers.
+\item \emph{Chapter~5} covers compilation, common errors, arXiv submission, and preview generation.
+\item \emph{Chapter~6} discusses advanced topics such as appendices, long tables, and custom floats.
+\item \emph{Chapter~7} summarises the template and points to further help.
+\end{itemize}

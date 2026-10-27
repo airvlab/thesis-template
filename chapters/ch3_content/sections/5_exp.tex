@@ -1,0 +1,31 @@
+\section{Acronyms and Citations}\label{ch3sec:acronyms-citations}
+
+This section shows how acronyms and citations work. Replace the examples with your own terminology and bibliography entries.
+
+The template uses the \texttt{glossaries} package to manage acronyms. When an acronym is used for the first time after \verb|\glsresetall|, it is printed in full with the abbreviation in parentheses; later uses show only the abbreviation. The template already defines several acronyms in \texttt{class/acronyms.tex}; for example, the first use of \gls{relu} expands to ``Rectified Linear Unit'', while a later use is simply \gls{relu}. Add your own acronyms in \texttt{class/acronyms.tex}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\draw[thick, primary, fill=primary!10] (0,0) rectangle (6,2.5);
+\node[align=center] at (3,1.25) {\textbf{Acronym Demo}\\ First use expands; later use abbreviates.};
+\end{tikzpicture}
+\mycaption{Acronym usage}{A placeholder figure summarising acronym behaviour in the template.}\label{ch3fig:exp-setup}
+\end{figure}
+
+\subsection{Citations}
+
+Citations are handled with \texttt{biblatex}. You can cite a source inline with the standard citation command, or print the full bibliographic entry with the full-cite command. The author and year commands are useful for narrative citations. For example:
+
+\begin{itemize}
+\item Inline: \cite{placeholder2024demo}.
+\item Author: \citeauthor{placeholder2024template} showed that \ldots
+\item Year: This was demonstrated in \citeyear{placeholder2024template}.
+\item Full entry: \fullcite{placeholder2024template}.
+\item Journal: \cite{placeholder2023journal} shows a journal example.
+\item Multi-citation: \cite{placeholder2024demo, placeholder2024template, placeholder2023journal}.
+\end{itemize}
+
+\subsection{Bibliography Files}
+
+Placeholder keys are defined in \texttt{class/bibliography/short.bib}. Replace them with your own entries, or create a new \texttt{.bib} file and load it in \texttt{class/thesis.cls} by adding a line such as \texttt{\textbackslash addbibresource\{class/bibliography/yourfile.bib\}}.
